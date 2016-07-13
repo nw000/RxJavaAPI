@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_17c03219a6f7354752a5e6fa7e8c412d12f31a9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_b1204f445fc15de10df06afb1ed7eb44b36a62af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_565acc289cab8960cbd61f32bb3ee3abec4da7c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_e77d6a0b9dc4483c3f036b18011615439f0d2d9e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_a1120fdf9d6c1ce32ba9ac5dc25717c52b334411.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="5a2386ad9bfff580b206a7fe305cdccd00798159">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/io.reactivex-rxandroid-1.2.1_b4def249c3073256434c62a22d6a4dbc671fd5a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.6/2586312cd2b8a511e4c6236736f5a039fc0f2273/rxjava-1.1.6.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="2586312cd2b8a511e4c6236736f5a039fc0f2273">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/rxjava-1.1.6_55ffb6985241dd50e204d5e0b66760a6e050a1b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_b1e5c6661f95b0103ebcc05c174a6e07ded4f33a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/jianjun.lin/百度云同步盘/code/RxJavaAPI/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_d313f8b33a0a78beb8137e9c03c5912061f8865e.jar" />
+    </item>
+
+</items>
