@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
@@ -82,15 +83,18 @@ public class RetryActivity extends AppCompatActivity {
         retryObservable = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
+                sb.append("subscriber.onNext(0)\n");
                 subscriber.onNext(0);
-                subscriber.onError(new Error("Test Error"));
+                int error = 1 / 0;
             }
         }).subscribeOn(Schedulers.io()).retry(2);
 
         retryWhenObservable = Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
-                subscriber.onError(new Error("Test Error"));
+                sb.append("subscriber.onNext(1)\n");
+                subscriber.onNext(1);
+                int error = 1 / 0;
             }
         }).retryWhen(new Func1<Observable<? extends Throwable>, Observable<?>>() {
             @Override
