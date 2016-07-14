@@ -45,15 +45,18 @@ public class RetryActivity extends AppCompatActivity {
                 "retryObservable = Observable.create(new Observable.OnSubscribe<Integer>() {\n" +
                 "   @Override\n" +
                 "   public void call(Subscriber<? super Integer> subscriber) {\n" +
+                "       sb.append(\"subscriber.onNext(0)\\n\");\n" +
                 "       subscriber.onNext(0);\n" +
-                "       subscriber.onError(new Error(\"Test Error\"));\n" +
+                "       int error = 1 / 0;\n" +
                 "   }\n" +
                 "}).subscribeOn(Schedulers.io()).retry(2);\n" +
                 "\n" +
                 "retryWhenObservable = Observable.create(new Observable.OnSubscribe<Integer>() {\n" +
-                "    @Override\n" +
-                "    public void call(Subscriber<? super Integer> subscriber) {\n" +
-                "        subscriber.onError(new Error(\"Test Error\"));\n" +
+                "   @Override\n" +
+                "   public void call(Subscriber<? super Integer> subscriber) {\n" +
+                "       sb.append(\"subscriber.onNext(1)\\n\");\n" +
+                "       subscriber.onNext(1);\n" +
+                "       int error = 1 / 0;\n" +
                 "    }\n" +
                 "}).retryWhen(new Func1<Observable<? extends Throwable>, Observable<?>>() {\n" +
                 "   @Override\n" +
