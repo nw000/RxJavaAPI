@@ -25,6 +25,7 @@ public class FlatMapActivity extends AppCompatActivity {
 
     private Observable<String> observable;
     private Observable<String> concatMapObservable;
+    private Observable<String> switchMapObservable;
     private StringBuilder sb = new StringBuilder();
 
     @Override
@@ -49,13 +50,24 @@ public class FlatMapActivity extends AppCompatActivity {
                 "       int delay = 2 - integer;// 0延迟2s，1延迟1s，2无延迟\n" +
                 "       return Observable.just(\"A\" + integer).delay(delay, TimeUnit.SECONDS);\n" +
                 "   }\n" +
+                "});\n" +
+                "Observable<String> switchMapObservable = Observable.just(0, 1, 2).switchMap(new Func1<Integer, Observable<String>>() {\n" +
+                "   @Override\n" +
+                "   public Observable<String> call(Integer integer) {\n" +
+                "       int delay = 2 - integer;// 0延迟2s，1延迟1s，2无延迟\n" +
+                "       return Observable.just(\"A\" + integer).delay(delay, TimeUnit.SECONDS);\n" +
+                "   }\n" +
                 "});");
         tv_bottom = (TextView) findViewById(R.id.tv_bottom);
-        Button btn_flatmap = (Button) findViewById(R.id.btn_subscribe);
-        btn_flatmap.setText("flatMap");
-        Button btn_concatmap = (Button) findViewById(R.id.btn_subscribe2);
-        btn_concatmap.setText("concatMap");
-        btn_concatmap.setVisibility(View.VISIBLE);
+        Button btn_subscribe = (Button) findViewById(R.id.btn_subscribe);
+        btn_subscribe.setText("flatMap");
+        Button btn_subscribe2 = (Button) findViewById(R.id.btn_subscribe2);
+        btn_subscribe2.setText("concatMap");
+        btn_subscribe2.setVisibility(View.VISIBLE);
+        Button btn_subscribe3 = (Button) findViewById(R.id.btn_subscribe3);
+        btn_subscribe3.setText("switchMap");
+        btn_subscribe3.setVisibility(View.VISIBLE);
+
 
         observable = Observable.just(0, 1, 2).flatMap(new Func1<Integer, Observable<String>>() {
             @Override
@@ -71,8 +83,14 @@ public class FlatMapActivity extends AppCompatActivity {
                 return Observable.just("A" + integer).delay(delay, TimeUnit.SECONDS);
             }
         });
-
-        btn_flatmap.setOnClickListener(new View.OnClickListener() {
+        switchMapObservable = Observable.just(0, 1, 2).switchMap(new Func1<Integer, Observable<String>>() {
+            @Override
+            public Observable<String> call(Integer integer) {
+                int delay = 2 - integer;// 0延迟2s，1延迟1s，2无延迟
+                return Observable.just("A" + integer).delay(delay, TimeUnit.SECONDS);
+            }
+        });
+        btn_subscribe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sb.setLength(0);
@@ -104,12 +122,44 @@ public class FlatMapActivity extends AppCompatActivity {
             }
         });
 
-        btn_concatmap.setOnClickListener(new View.OnClickListener() {
+        btn_subscribe2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sb.setLength(0);
                 tv_bottom.setText(sb);
                 concatMapObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        sb.append("onCompleted()");
+                        sb.append("\n");
+                        tv_bottom.setText(sb);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        sb.append("onError() ");
+                        sb.append(e.getMessage());
+                        sb.append("\n");
+                        tv_bottom.setText(sb);
+                    }
+
+                    @Override
+                    public void onNext(String o) {
+                        sb.append("onNext() ");
+                        sb.append(o);
+                        sb.append("\n");
+                        tv_bottom.setText(sb);
+                    }
+                });
+            }
+        });
+
+        btn_subscribe3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sb.setLength(0);
+                tv_bottom.setText(sb);
+                switchMapObservable.observeOn(AndroidSchedulers.mainThread()).subscribe(new Subscriber<String>() {
                     @Override
                     public void onCompleted() {
                         sb.append("onCompleted()");

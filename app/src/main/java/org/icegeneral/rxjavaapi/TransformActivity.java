@@ -46,7 +46,7 @@ public class TransformActivity extends AppCompatActivity {
                 }
             }
         };
-        adapter.setData(new String[]{"Map/Cast", "FlatMap/ConcatMap", "Buffer", "Window", "Scan", "GroupBy"});
+        adapter.setData(new String[]{"Map/Cast", "FlatMap/ConcatMap/SwitchMap", "Buffer", "Window", "Scan", "GroupBy"});
         rv.setAdapter(adapter);
     }
 
